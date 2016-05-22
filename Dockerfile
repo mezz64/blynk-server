@@ -13,8 +13,13 @@ RUN ln -s /data/server.properties /blynk/server.properties
 # By default, mobile application uses port 8443 and is based on SSL/TLS
 # sockets. Default hardware port is 8442 and is based on plain TCP/IP
 # sockets.
-# Blynk server also has administration panel where you could monitor your 
+# Blynk server also has administration panel where you could monitor your
 # server. It could be accessible with URL https://your_ip:7443/admin
-EXPOSE 7443 8442 8443
+
+# 1 port per line for Dokku
+EXPOSE 7443
+EXPOSE 8442
+EXPOSE 8443
+
 WORKDIR /data
 ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data"]
