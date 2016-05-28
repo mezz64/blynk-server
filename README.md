@@ -12,8 +12,8 @@ docker build -t blynk .
 docker run --restart=always \
 -p 7443:7443 -p 8443:8443 \
 -p 8442:8442 -p 8441:8441 \
--v /home/dokku/blynk-server-data:/data \
---name blynk -d blynk
+-v /path/to/blynk-server-data:/data \
+--name blynk -d pinya/blynk
 ```
 
 ## SSL
