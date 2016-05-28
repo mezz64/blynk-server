@@ -1,14 +1,13 @@
 # Docker image that runs the Blynk server v0.16.0
 
-## Run
-### Build image
+## Build image
 
 ```
 docker build -t blynk .
 ```
-### Run image
+## Run image
 
-```bash
+```
 docker run --restart=always \
 -p 7443:7443 -p 8443:8443 \
 -p 8442:8442 -p 8441:8441 \
