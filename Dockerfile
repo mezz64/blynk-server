@@ -20,7 +20,7 @@ RUN ln -s /data/mail.properties /blynk/mail.properties
 # server. It could be accessible with URL https://your_ip:7443/admin
 
 # 1 port per line for Dokku
-EXPOSE 7443 8442 8443
+EXPOSE 7443 8441 8442 8443
 
 WORKDIR /data
 ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data"]

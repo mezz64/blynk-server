@@ -1,17 +1,22 @@
-# Docker image that runs the Blynk server v0.16.0 
+# Docker image that runs the Blynk server v0.16.0
 
 ## Run
 ### Build image
 
-    docker build -t blynk .
-    
+```
+docker build -t blynk .
+```
 ### Run image
 
-    docker run --restart=always  -p 7443:7443 -p 8443:8443 \
-    -v /path/to/blynk-data:/data \
-    --name blynk -d blynk
+```bash
+docker run --restart=always \
+-p 7443:7443 -p 8443:8443 \
+-p 8442:8442 -p 8441:8441 \
+-v /home/dokku/blynk-server-data:/data \
+--name blynk -d blynk
+```
 
-## SSL 
+## SSL
 
 You can obtain free ssl certificates using [Let's Encrypt Certbot](https://certbot.eff.org/) or from [StartSSL](https://www.startssl.com/).
 
