@@ -1,7 +1,7 @@
 FROM java:8-jre
 MAINTAINER Michael Ferguson <mpherg@gmail.com>
 
-ENV BLYNK_SERVER_VERSION 0.15.4
+ENV BLYNK_SERVER_VERSION 0.16.0
 RUN mkdir /blynk
 RUN curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_SERVER_VERSION}/server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
 
@@ -17,9 +17,7 @@ RUN ln -s /data/server.properties /blynk/server.properties
 # server. It could be accessible with URL https://your_ip:7443/admin
 
 # 1 port per line for Dokku
-EXPOSE 7443
-EXPOSE 8442
-EXPOSE 8443
+EXPOSE 7443 8442 8443
 
 WORKDIR /data
 ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data"]
