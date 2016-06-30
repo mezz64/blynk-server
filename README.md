@@ -1,4 +1,4 @@
-# Docker image that runs the Blynk server v0.16.0
+# Docker image that runs the Blynk server v0.16.2
 
 ## Build image
 
@@ -26,6 +26,10 @@ Add these lines to `blynk-data/server.properties`
 server.ssl.cert=/data/fullchain.crt
 server.ssl.key=/data/privkey_pass.pem
 server.ssl.key.pass=SeCuR3_Pa$$w0rD
+
+https.cert=/data/fullchain.crt
+https.key=/data/privkey_pass.pem
+https.key.pass=SeCuR3_Pa$$w0rD
 ```
 Don't forget to encrypt your privkey and set password:
 
