@@ -10,10 +10,13 @@ RUN mkdir /data
 
 # Place symbolic link to server config file
 # so that this can be persisted in /data
-RUN ln -s /blynk/server.properties /data/server.properties 
+RUN ln -s /data/server.properties /blynk/server.properties  
 
 # Symlink for mailer config
-RUN ln -s /blynk/mail.properties /data/mail.properties 
+RUN ln -s /data/mail.properties /blynk/mail.properties  
+
+#symlink blynk
+RUN ln -s /data/blynk /blynk
 
 # By default, mobile application uses port 8443 and is based on SSL/TLS
 # sockets.
